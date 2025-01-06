@@ -1,24 +1,25 @@
 Test case 1: Home page:
 1.1. Navigate to https://sweetshop.netlify.app/
 1.2. Check the page has title "Welcome to the sweet shop!".
-1.3. Check the "Sweet shop" button redirects to home page.
-1.4. Check the page has the footer "Sweet Shop Project 2018".
+1.3. Chechk if navigation bar with "Sweet shop", "Sweets", "About", "Login", "Basket" is visible.
+1.4. Check the advertisement image is visible.
+1.5. Check the page has the footer "Sweet Shop Project 2018".
 
 Test case 2: Sweets page:
 2.1. Navigate to https://sweetshop.netlify.app/
 2.2. Click on "Sweets" button on navigation bar.
 2.3. Verify user is navigated to "Sweets" page successfully.
     2.3.1 Check the page has title "Browse sweets".
-2.4. Check the products list is visible.
-2.5. Verify that product detail is visible: image, title, description, price.
-2.6. Verify that "Add to Basket" button adds product in cart. 
+2.4. Check if all products list is visible.
+2.5. Verify that first product detail is visible: image, title, description, price.
+2.6. Verify that first product "Add to Basket" button is visible. 
 
 Test case 3: About page:
 3.1. Navigate to https://sweetshop.netlify.app/
 3.2. Click on "About" button on navigation bar.
 3.4. Check the page has title 'Sweet Shop Project'.
-3.5. Check the page has the description.
-3.6. Check the page has the footer "Sweet Shop Project 2018".
+3.5. Check the page has description.
+3.6. Check the page has footer "Sweet Shop Project 2018".
 
 Test case 4: Login page:
 4.1. Navigate to https://sweetshop.netlify.app/
@@ -37,15 +38,43 @@ Test case 4: Login page:
     4.5.3. Verify error message "Please enter a valid email address." is vissible.
     4.5.4. Verify error message "Please enter a valid password." is vissible.
 
-Test case 5: Successfull product delete from basket:
-5.1. Navigate to https://sweetshop.netlify.app/
-Choose first product and click "Add to basket"
-5.2. Click on "Basket" button on navigation bar.
-5.3. Verify that Basket page is displayed.
-5.4. Click on "Delete item".
-5.5. Verify that product is removed from the cart.
+Test case 5: Your account page:
+Navigate to https://sweetshop.netlify.app/
+Click on "Login" button on navigation bar.
+Enter correct email address and password.
+Click 'login' button.
+Verify that "Your Account" is visible.
+Verify that "Previous Orders" is visible.
+Verify that "Your Basket" is visible.
 
-Test case 6: Successfull all products remove.
+Test case : Basket page: correct item count:
+Navigate to https://sweetshop.netlify.app/
+Choose first two product and click "Add to basket"
+Click on "Basket" button on navigation bar.
+Verify that product count matches 2.
+
+Test case : Basket page: Correct item price:
+Navigate to https://sweetshop.netlify.app/
+Choose first two products and click "Add to basket"
+Click on "Basket" button on navigation bar.
+Verify that total price is correct.
+
+Test case : Basket page: Standard shipping
+Navigate to https://sweetshop.netlify.app/
+Choose first product and click "Add to basket"
+Click on "Basket" button on navigation bar.
+Select Standard shipping.
+Verify that total price is correct.
+
+Test case : Basket page: Successfull product delete from basket:
+Navigate to https://sweetshop.netlify.app/
+Choose first product and click "Add to basket"
+Click on "Basket" button on navigation bar.
+Verify that Basket page is displayed.
+Click on "Delete item".
+Verify that product is removed from the cart.
+
+Test case : Basket page: Successfull all products remove:
 Navigate to https://sweetshop.netlify.app/
 Add two first products in basket by clicking "Add to basket"
 Click on "Basket" button on navigation bar.
@@ -53,15 +82,11 @@ Verify that Basket page is displayed.
 Click on "Empty Basket".
 Verify that products is removed from the cart.
 
-Test case 7: Successfull  
-5.1. Navigate to https://sweetshop.netlify.app/
+Test case : Successfull payment scenario:
+Navigate to https://sweetshop.netlify.app/
 Choose first product and click "Add to basket"
-5.2. Click on "Basket" button on navigation bar.
-5.3. Verify that Basket page is displayed.
+Click on "Basket" button on navigation bar.
+Verify that Basket page is displayed.
 Enter address details: "First Name", "Last Name", "Email", "Address", "Address 2", "Country", "City", "Zip".
 Enter payment details: "Name on card", "Credit card number", "Expiration", "CCV".
 Click on "Continue to checkout" button.
-
-Test case 8: 
-
-
