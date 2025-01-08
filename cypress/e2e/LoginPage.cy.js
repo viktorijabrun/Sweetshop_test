@@ -40,7 +40,6 @@ describe("Login page test", () => {
     cy.contains("button", "Login").click();
 
     //Verify that error message appears next to email address input.
-
     cy.get(".invalid-email").should("be.visible");
 
     // Verify error message appears next to password input.

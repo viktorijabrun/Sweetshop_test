@@ -3,18 +3,9 @@ describe("Your Account page test", () => {
     //Navigate to shop
     cy.visit("https://sweetshop.netlify.app/");
 
-    //Click on "Login" button on navigation bar.
     cy.contains(".nav-link", "Login").click();
 
-    //Enter correct email address and password.
-    cy.get("#exampleInputEmail").type("a@a.com");
-    cy.get("#exampleInputPassword").type("pass");
-
-    //Click login button
-    cy.contains("button", "Login").click();
-
-    // Verify that "Your Account" is visible.
-    cy.contains("h1", "Your Account").should("be.visible");
+    cy.login("a@a.com", "pass");
 
     //Verify that "Previous Orders" is visible.
     cy.contains("h4", "Previous Orders").should("be.visible");

@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", (email, password) => {
+  cy.get("#exampleInputEmail").type(email);
+
+  cy.get("#exampleInputPassword").type(password);
+
+  cy.contains("button", "Login").click();
+
+  cy.contains("h1", "Your Account").should("be.visible");
+});
+
+// cypress/support/commands.js
+
+Cypress.Commands.add("addItemToBasket", (itemIndexes) => {
+  itemIndexes.forEach((index) => {
+    cy.get(".addItem").eq(index).click();
+  });
+
+  cy.contains(".badge", itemIndexes.length.toString()).should("be.visible");
+
+  cy.contains(".nav-link", "Basket").click();
+
+  cy.contains("h1", "Your Basket").should("be.visible");
+});

@@ -56,22 +56,18 @@ Check if footer "Sweet Shop Project 2018"is visible.
 
 Test case : Basket page: correct item count:
 Navigate to https://sweetshop.netlify.app/
-Choose first two product and click "Add to basket"
+Choose first two product and click "Add to basket".
+Verify that the item is added to the cart and the cart icon is updated 
 Click on "Basket" button on navigation bar.
 Verify that product count matches 2.
 
 Test case : Basket page: Correct item price:
 Navigate to https://sweetshop.netlify.app/
 Choose first two products and click "Add to basket"
+Verify that the item is added to the cart and the cart icon is updated 
 Click on "Basket" button on navigation bar.
 Verify that total price is correct.
 
-Test case : Basket page: Standard shipping
-Navigate to https://sweetshop.netlify.app/
-Choose first product and click "Add to basket"
-Click on "Basket" button on navigation bar.
-Select Standard shipping.
-Verify that total price is correct.
 
 Test case : Basket page: Successfull product delete from basket:
 Navigate to https://sweetshop.netlify.app/
@@ -89,7 +85,7 @@ Verify that Basket page is displayed.
 Click on "Empty Basket".
 Verify that products is removed from the cart.
 
-Test case : Successfull payment scenario:
+Test case : Basket page: Successfull payment scenario:
 Navigate to https://sweetshop.netlify.app/
 Choose first product and click "Add to basket"
 Click on "Basket" button on navigation bar.
@@ -97,3 +93,9 @@ Verify that Basket page is displayed.
 Enter address details: "First Name", "Last Name", "Email", "Address", "Address 2", "Country", "City", "Zip".
 Enter payment details: "Name on card", "Credit card number", "Expiration", "CCV".
 Click on "Continue to checkout" button.
+
+
+
+
+Known issues:
+Standard Shipping return incorect price or NaN
