@@ -21,22 +21,24 @@ Test case 3: About page:
 3.5. Check the page has description.
 3.6. Check the page has footer "Sweet Shop Project 2018".
 
-Test case 4: Login page:
+Test case 4: 
+Login page:
 4.1. Navigate to https://sweetshop.netlify.app/
 4.2. Click on "Login" button on navigation bar.
-4.3. Page load:
+4.3. Page content is visible:
     4.3.1. Check page has 'Login' title, description.
     4.3.2. Check the page has 'Email adress' and 'Password' textboxes.
     4.3.3. Check if the "Login" button is vissible.
+    4.3.4. Check if social quick login images is visible
+    4.3.5. Check if footer "Sweet Shop Project 2018"is visible.
 4.4. Successfull login scenario:
     4.4.1. Enter correct email address and password.
     4.4.2. Click 'login' button.
     4.4.3. Verify that "Your Account" is visible.
 4.5. Unsuccessfull login scenario:
-    4.5.1. Leave empty email address and password inputs.
-    4.5.2. Click 'login' button.
-    4.5.3. Verify error message "Please enter a valid email address." is vissible.
-    4.5.4. Verify error message "Please enter a valid password." is vissible.
+    4.5.1. Leave empty email address and password inputs and click 'login' button.
+    4.5.2. Verify that error message appears next to email address input.
+    4.5.3. Verify error message appears next to password input.
 
 Test case 5: Your account page:
 Navigate to https://sweetshop.netlify.app/
@@ -45,7 +47,12 @@ Enter correct email address and password.
 Click 'login' button.
 Verify that "Your Account" is visible.
 Verify that "Previous Orders" is visible.
+Verify that previous orders table is visible.
+Verify that title "Item Order Breakdown" is visible.
+Verify that chart is visible.
 Verify that "Your Basket" is visible.
+Verify that number with item number is visible.
+Check if footer "Sweet Shop Project 2018"is visible.
 
 Test case : Basket page: correct item count:
 Navigate to https://sweetshop.netlify.app/

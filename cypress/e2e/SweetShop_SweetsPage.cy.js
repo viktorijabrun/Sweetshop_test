@@ -11,14 +11,15 @@ describe("Sweets page", () => {
 
     //Check if all products list is visible.
     cy.get(".col-lg-3").should("be.visible");
+
+    //Verify that first product detail is visible: image, title, description, price.
+    cy.get(".card").first().should("be.visible");
+    cy.get(".card-img-top").first().should("be.visible");
+    cy.get(".card-title").first().should("be.visible");
+    cy.get(".card-text").first().should("be.visible");
+    cy.get(".text-muted").first().should("be.visible");
+
+    // Verify that first product "Add to Basket" button is visible.
+    cy.get(".btn").first().should("be.visible");
   });
 });
-
-// Test case 2: Sweets page:
-// 2.1. Navigate to https://sweetshop.netlify.app/
-// 2.2. Click on "Sweets" button on navigation bar.
-// 2.3. Verify user is navigated to "Sweets" page successfully.
-//     2.3.1 Check the page has title "Browse sweets".
-// 2.4. Check if all products list is visible.
-// 2.5. Verify that first product detail is visible: image, title, description, price.
-// 2.6. Verify that first product "Add to Basket" button is visible.
