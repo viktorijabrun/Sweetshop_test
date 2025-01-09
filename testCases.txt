@@ -3,16 +3,17 @@ Test case 1: Home page:
 1.2. Check the page has title "Welcome to the sweet shop!".
 1.3. Chechk if navigation bar with "Sweet shop", "Sweets", "About", "Login", "Basket" is visible.
 1.4. Check the advertisement image is visible.
-1.5. Check the page has the footer "Sweet Shop Project 2018".
+1.5. Check if products is visible.
+1.6. Check the page has the footer "Sweet Shop Project 2018".
 
 Test case 2: Sweets page:
 2.1. Navigate to https://sweetshop.netlify.app/
 2.2. Click on "Sweets" button on navigation bar.
 2.3. Verify user is navigated to "Sweets" page successfully.
-    2.3.1 Check the page has title "Browse sweets".
-2.4. Check if all products list is visible.
-2.5. Verify that first product detail is visible: image, title, description, price.
-2.6. Verify that first product "Add to Basket" button is visible. 
+2.4. Check the page has title "Browse sweets".
+2.5. Check if all products list is visible.
+2.6. Verify that first product detail is visible: image, title, description, price.
+2.7. Verify that first product "Add to Basket" button is visible. 
 
 Test case 3: About page:
 3.1. Navigate to https://sweetshop.netlify.app/
@@ -29,7 +30,7 @@ Login page:
     4.3.1. Check page has 'Login' title, description.
     4.3.2. Check the page has 'Email adress' and 'Password' textboxes.
     4.3.3. Check if the "Login" button is vissible.
-    4.3.4. Check if social quick login images is visible
+    4.3.4. Check if social media quick login images is visible.
     4.3.5. Check if footer "Sweet Shop Project 2018"is visible.
 4.4. Successfull login scenario:
     4.4.1. Enter correct email address and password.
@@ -41,61 +42,73 @@ Login page:
     4.5.3. Verify error message appears next to password input.
 
 Test case 5: Your account page:
-Navigate to https://sweetshop.netlify.app/
-Click on "Login" button on navigation bar.
-Enter correct email address and password.
-Click 'login' button.
-Verify that "Your Account" is visible.
-Verify that "Previous Orders" is visible.
-Verify that previous orders table is visible.
-Verify that title "Item Order Breakdown" is visible.
-Verify that chart is visible.
-Verify that "Your Basket" is visible.
-Verify that number with item number is visible.
-Check if footer "Sweet Shop Project 2018"is visible.
+5.1. Navigate to https://sweetshop.netlify.app/
+5.2. Click on "Login" button on navigation bar.
+5.3. Enter correct email address and password.
+5.4. Click 'login' button.
+5.5. Verify that "Your Account" is visible.
+5.6. Verify that "Previous Orders" is visible.
+5.7. Verify that previous orders table is visible.
+5.8. Verify that title "Item Order Breakdown" is visible.
+5.9. Verify that chart is visible.
+5.10. Verify that "Your Basket" is visible.
+5.11. Verify that number with item number is visible.
+5.12. Check if footer "Sweet Shop Project 2018"is visible.
 
-Test case : Basket page: correct item count:
-Navigate to https://sweetshop.netlify.app/
-Choose first two product and click "Add to basket".
-Verify that the item is added to the cart and the cart icon is updated 
-Click on "Basket" button on navigation bar.
-Verify that product count matches 2.
-
-Test case : Basket page: Correct item price:
-Navigate to https://sweetshop.netlify.app/
-Choose first two products and click "Add to basket"
-Verify that the item is added to the cart and the cart icon is updated 
-Click on "Basket" button on navigation bar.
-Verify that total price is correct.
-
-
-Test case : Basket page: Successfull product delete from basket:
-Navigate to https://sweetshop.netlify.app/
-Choose first product and click "Add to basket"
-Click on "Basket" button on navigation bar.
-Verify that Basket page is displayed.
-Click on "Delete item".
-Verify that product is removed from the cart.
-
-Test case : Basket page: Successfull all products remove:
-Navigate to https://sweetshop.netlify.app/
-Add two first products in basket by clicking "Add to basket"
-Click on "Basket" button on navigation bar.
-Verify that Basket page is displayed.
-Click on "Empty Basket".
-Verify that products is removed from the cart.
-
-Test case : Basket page: Successfull payment scenario:
-Navigate to https://sweetshop.netlify.app/
-Choose first product and click "Add to basket"
-Click on "Basket" button on navigation bar.
-Verify that Basket page is displayed.
-Enter address details: "First Name", "Last Name", "Email", "Address", "Address 2", "Country", "City", "Zip".
-Enter payment details: "Name on card", "Credit card number", "Expiration", "CCV".
-Click on "Continue to checkout" button.
-
-
-
+Test case 6: Basket page:
+6.1. Correct item count:
+    6.1.1. Navigate to https://sweetshop.netlify.app/
+    6.1.2. Choose first two product and click "Add to basket".
+    6.1.3. Verify that the item is added to the cart and the cart icon is updated.
+    6.1.4. Click on "Basket" button on navigation bar.
+    6.1.5. Verify that Basket page is displayed.
+    6.1.6. Verify that product count matches 2.
+6.2. Total price is correct:
+    6.2.1. Navigate to https://sweetshop.netlify.app/
+    6.2.2. Choose first two products and click "Add to basket"
+    6.2.3. Verify that the item is added to the cart and the cart icon is updated. 
+    6.2.4. Click on "Basket" button on navigation bar.
+    6.2.5. Verify that Basket page is displayed.
+    6.2.6. Verify that total price is correct.
+6.3. Successfull product delete from basket:
+    6.3.1. Navigate to https://sweetshop.netlify.app/
+    6.3.2. Choose first product and click "Add to basket"
+    6.3.3. Click on "Basket" button on navigation bar.
+    6.3.4. Verify that Basket page is displayed.
+    6.3.5. Click on "Delete item".
+    6.3.6. Verify that product is removed from the cart.
+6.4. Successfully remove all products:
+    6.4.1. Navigate to https://sweetshop.netlify.app/
+    6.4.2. Add two first products in basket by clicking "Add to basket"
+    6.4.3. Click on "Basket" button on navigation bar.
+    6.4.4. Verify that Basket page is displayed.
+    6.4.5. Click on "Empty Basket".
+    6.4.6. Verify that products is removed from the cart.
+6.5. Successfull payment scenario:
+    6.5.1. Navigate to https://sweetshop.netlify.app/
+    6.5.2. Choose first product and click "Add to basket"
+    6.5.3. Click on "Basket" button on navigation bar.
+    6.5.4. Verify that Basket page is displayed.
+    6.5.5. Enter address details: "First Name", "Last Name", "Email", "Address", "Address 2", "Country", "City", "Zip".
+    6.5.6. Enter payment details: "Name on card", "Credit card number", "Expiration", "CCV".
+    6.5.7. Click on "Continue to checkout" button.
+6.6. Unsuccessfull payment scenario:
+    6.6.1. Add one product in basket and navigates to basket.
+    6.6.2. Leave all inputs empty and click button "Continue to checkout".
+    6.6.3. Verify that messages indicating invalid feedback are visible next to the required inputs.
 
 Known issues:
-Standard Shipping return incorect price or NaN
+Sweets page:
+Wham Bars product image is not visible
+
+About page:
+Page is unavailable when accessed from Basket page.
+
+Login page:
+Social media icons are not linked to any functionality.
+You can login with random email and password without registration.
+
+Basket page:
+Standard Shipping returns incorect price or NaN.
+After clicking "Continue to checkout" button, page resets and does not navigate anywhere.
+Promo code does not give any feedback message.

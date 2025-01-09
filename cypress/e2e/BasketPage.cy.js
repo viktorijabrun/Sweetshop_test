@@ -3,7 +3,7 @@ describe("Basket page test", () => {
     cy.visit("https://sweetshop.netlify.app/");
   });
 
-  it("Verify that item count is correct", () => {
+  it("Verify that items count is correct", () => {
     // Choose first two product and click "Add to basket".
     cy.get(".addItem").eq(0).click();
     cy.get(".addItem").eq(1).click();
@@ -30,7 +30,7 @@ describe("Basket page test", () => {
   });
 
   it("Successfull product delete from basket", () => {
-    //Adds one product in basket and navigates to basket
+    //Adds one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
     //Click on "Delete item".
@@ -41,7 +41,7 @@ describe("Basket page test", () => {
   });
 
   it("Successfully remove all products", () => {
-    //Adds two products in basket and navigates to basket
+    //Adds two products in basket and navigates to basket.
     cy.addItemToBasket([0, 1]);
 
     // Click on "Empty Basket".
@@ -52,7 +52,7 @@ describe("Basket page test", () => {
   });
 
   it("Successfull payment scenario", () => {
-    //Adds one product in basket and navigates to basket
+    //Add one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
     // Enter address details: "First Name", "Last Name", "Email", "Address", "Address 2", "Country", "City", "Zip".
@@ -70,46 +70,19 @@ describe("Basket page test", () => {
     cy.get(".col-md-6").eq(3).find("input").type("123456789");
     cy.get("#cc-expiration").type("07/2027");
     cy.get("#cc-cvv").type(777);
-    
+
     // Click on "Continue to checkout" button.
     cy.contains(".btn", "Continue to checkout").click();
   });
+
+  it("Unsuccessfull payment scenario", () => {
+    //Add one product in basket and navigates to basket.
+    cy.addItemToBasket([0]);
+
+    //Leave all inputs empty and click button "Continue to checkout".
+    cy.contains(".btn", "Continue to checkout").click();
+
+    //Verify that messages indicating invalid feedback are visible next to the required inputs.
+    cy.get(".invalid-feedback").should("be.visible");
+  });
 });
-
-// Test case : Basket page: correct item count:
-// Navigate to https://sweetshop.netlify.app/
-// Choose first two product and click "Add to basket"
-// Verify that the item is added to the cart and the cart icon is updated
-// Click on "Basket" button on navigation bar.
-// Verify that product count matches 2.
-
-// Test case : Basket page: Correct item price:
-// Navigate to https://sweetshop.netlify.app/
-// Choose first two products and click "Add to basket"
-// Click on "Basket" button on navigation bar.
-// Verify that total price is correct.
-
-// Test case : Basket page: Successfull product delete from basket:
-// Navigate to https://sweetshop.netlify.app/
-// Choose first product and click "Add to basket"
-// Click on "Basket" button on navigation bar.
-// Verify that Basket page is displayed.
-// Click on "Delete item".
-// Verify that product is removed from the cart.
-
-// Test case : Basket page: Successfull all products remove:
-// Navigate to https://sweetshop.netlify.app/
-// Add two first products in basket by clicking "Add to basket"
-// Click on "Basket" button on navigation bar.
-// Verify that Basket page is displayed.
-// Click on "Empty Basket".
-// Verify that products is removed from the cart.
-
-// Test case : Basket page: Successfull payment scenario:
-// Navigate to https://sweetshop.netlify.app/
-// Choose first product and click "Add to basket"
-// Click on "Basket" button on navigation bar.
-// Verify that Basket page is displayed.
-// Enter address details: "First Name", "Last Name", "Email", "Address", "Address 2", "Country", "City", "Zip".
-// Enter payment details: "Name on card", "Credit card number", "Expiration", "CCV".
-// Click on "Continue to checkout" button.

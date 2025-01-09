@@ -17,10 +17,10 @@ describe("Login page test", () => {
     // Check if the "Login" button is vissible.
     cy.contains("button", "Login").should("be.visible");
 
-    //Check if social quick login images is visible
+    //Check if social quick login images is visible.
     cy.get(".social").should("be.visible");
 
-    //Check if footer "Sweet Shop Project 2018"is visible
+    //Check if footer "Sweet Shop Project 2018"is visible.
     cy.contains("p", "Sweet Shop Project 2018").should("be.visible");
   });
 
@@ -36,7 +36,7 @@ describe("Login page test", () => {
   });
 
   it("Unsuccessfull login scenario", () => {
-    ///Leave empty email address and password inputs and click login button
+    ///Leave empty email address and password inputs and click login button.
     cy.contains("button", "Login").click();
 
     //Verify that error message appears next to email address input.

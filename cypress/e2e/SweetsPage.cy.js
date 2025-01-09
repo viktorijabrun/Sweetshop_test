@@ -10,7 +10,7 @@ describe("Sweets page", () => {
     cy.contains("h1", "Browse sweets").should("be.visible");
 
     //Check if all products list is visible.
-    cy.get(".col-lg-3").should("be.visible");
+    cy.get(".card").should("be.visible");
 
     //Verify that first product detail is visible: image, title, description, price.
     cy.get(".card").first().should("be.visible");
