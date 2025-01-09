@@ -8,13 +8,13 @@ describe("Login page test", () => {
     cy.contains("h1", "Login").should("be.visible");
     cy.get(".lead").should("be.visible");
 
-    // Check the page has 'Email adress' and 'Password' textboxes.
+    // Check the page has 'Email address' and 'Password' text boxes.
     cy.contains("label", "Email address").should("be.visible");
     cy.contains("label", "Password").should("be.visible");
     cy.get("#exampleInputEmail").should("be.visible");
     cy.get("#exampleInputPassword").should("be.visible");
 
-    // Check if the "Login" button is vissible.
+    // Check if the "Login" button is visible.
     cy.contains("button", "Login").should("be.visible");
 
     //Check if social quick login images is visible.
@@ -24,7 +24,7 @@ describe("Login page test", () => {
     cy.contains("p", "Sweet Shop Project 2018").should("be.visible");
   });
 
-  it("Successfull login Scenario", () => {
+  it("Successful login Scenario", () => {
     //Enter correct email address and password.
     cy.get("#exampleInputEmail").type("a@a.com");
     cy.get("#exampleInputPassword").type("pass");
@@ -35,7 +35,7 @@ describe("Login page test", () => {
     cy.contains("h1", "Your Account").should("be.visible");
   });
 
-  it("Unsuccessfull login scenario", () => {
+  it("Unsuccessful login scenario", () => {
     ///Leave empty email address and password inputs and click login button.
     cy.contains("button", "Login").click();
 

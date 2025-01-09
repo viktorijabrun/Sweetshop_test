@@ -29,7 +29,7 @@ describe("Basket page test", () => {
     //????????????????????????
   });
 
-  it("Successfull product delete from basket", () => {
+  it("Successful product delete from basket", () => {
     //Adds one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
@@ -51,7 +51,7 @@ describe("Basket page test", () => {
     cy.contains("#basketCount", "0").should("be.visible");
   });
 
-  it("Successfull payment scenario", () => {
+  it("Successful payment scenario", () => {
     //Add one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
@@ -75,7 +75,7 @@ describe("Basket page test", () => {
     cy.contains(".btn", "Continue to checkout").click();
   });
 
-  it("Unsuccessfull payment scenario", () => {
+  it("Unsuccessful payment scenario", () => {
     //Add one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 

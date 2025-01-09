@@ -6,7 +6,7 @@ describe("Your Account page test", () => {
     cy.contains(".nav-link", "Login").click();
 
     //Login with your account.
-    cy.login("a@a.com", "pass");
+    cy.login("joesmith@gmail.com", "pass");
 
     //Verify that "Previous Orders" is visible.
     cy.contains("h4", "Previous Orders").should("be.visible");

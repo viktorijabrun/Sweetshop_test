@@ -19,7 +19,7 @@ Ensure you have the following installed on your system:
 
 1. Clone the repository: https://github.com/viktorijabrun/Sweetshop_test.git
 2. Install dependencies: `npm install`
-3. Run cypress: `npm run cypress-ui`
+3. Open cypress: `npm run cypress-ui` or run cypress in terminal: `cypress-cli`
 
 ---
 

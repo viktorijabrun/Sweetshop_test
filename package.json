@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "cypress-ui": "npx cypress open"
+    "cypress-ui": "npx cypress open",
+    "cypress-cli": "npx cypress run"
   },
   "keywords": [],
   "author": "",
