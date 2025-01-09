@@ -38,6 +38,10 @@ Ensure you have the following installed on your system:
 - Social media icons are not linked to any functionality.
 - Users can login with random credentials without registration.
 
+### Your page
+
+- Welcome message always brings same email 'test@user.com', doesn't match with email address that you entered in login page.
+
 ### Basket Page:
 
 - Standard shipping returns incorrect price or `NaN`.

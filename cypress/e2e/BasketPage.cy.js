@@ -21,12 +21,33 @@ describe("Basket page test", () => {
     cy.contains("#basketCount", "2").should("be.visible");
   });
 
-  it("Verify that total price is correct", () => {
-    // Choose first two product and click "Add to basket".
+  it("Total price is correct", () => {
+    //Add items to basket
     cy.addItemToBasket([0, 1]);
 
-    // Verify that total price is correct.
-    //????????????????????????
+    // Get the first item's price
+    cy.get(".list-group-item > span")
+      .eq(0)
+      .invoke("text")
+      .then((text1) => {
+        const firstPrice = parseFloat(text1.replace("£", ""));
+
+        // Get the second item's price
+        cy.get(".list-group-item > span")
+          .eq(1)
+          .invoke("text")
+          .then((text2) => {
+            const secondPrice = parseFloat(text2.replace("£", ""));
+
+            // Get the total price and verify it matches the sum of item prices
+            cy.get("strong")
+              .invoke("text")
+              .then((text3) => {
+                const totalPrice = parseFloat(text3.replace("£", ""));
+                expect(totalPrice).to.equal(firstPrice + secondPrice);
+              });
+          });
+      });
   });
 
   it("Successful product delete from basket", () => {
@@ -84,5 +105,18 @@ describe("Basket page test", () => {
 
     //Verify that messages indicating invalid feedback are visible next to the required inputs.
     cy.get(".invalid-feedback").should("be.visible");
+  });
+
+  it("Should retain items added to the basket while navigating the page.", () => {
+    //Add item to basket.
+    cy.addItemToBasket([0]);
+
+    //Navigate trough pages.
+    cy.visit("https://sweetshop.netlify.app/sweets");
+    cy.visit("https://sweetshop.netlify.app/login");
+    cy.visit("https://sweetshop.netlify.app/basket");
+
+    //Check if basket count matches expected.
+    cy.get("#basketCount").should("have.text", "1");
   });
 });

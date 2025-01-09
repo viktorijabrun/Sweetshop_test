@@ -33,6 +33,8 @@ Cypress.Commands.add("login", (email, password) => {
 });
 
 Cypress.Commands.add("addItemToBasket", (itemIndexes) => {
+  cy.contains(".nav-link", "Sweets").click();
+
   itemIndexes.forEach((index) => {
     cy.get(".addItem").eq(index).click();
   });
