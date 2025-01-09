@@ -96,19 +96,3 @@ Test case 6: Basket page:
     6.6.1. Add one product in basket and navigates to basket.
     6.6.2. Leave all inputs empty and click button "Continue to checkout".
     6.6.3. Verify that messages indicating invalid feedback are visible next to the required inputs.
-
-Known issues:
-Sweets page:
-Wham Bars product image is not visible
-
-About page:
-Page is unavailable when accessed from Basket page.
-
-Login page:
-Social media icons are not linked to any functionality.
-You can login with random email and password without registration.
-
-Basket page:
-Standard Shipping returns incorect price or NaN.
-After clicking "Continue to checkout" button, page resets and does not navigate anywhere.
-Promo code does not give any feedback message.

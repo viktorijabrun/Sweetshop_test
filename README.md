@@ -1,4 +1,4 @@
-# Sweet Shop Testing Project
+# 🍬 Sweet Shop Testing Project
 
 ## Project Overview
 
@@ -6,23 +6,24 @@ This project is focused on testing the functionality of the **Sweet Shop** websi
 
 ---
 
-## Tools & Technologies
+## 🪄 How to Use This Repository
 
-- **Cypress**: For automated end-to-end testing.
-- **HTML/CSS/JavaScript**: Frontend technologies for the Sweet Shop website.
+## ✨ Prerequisites
+
+Ensure you have the following installed on your system:
+
+- Node.js
+- npm (comes with Node.js)
+
+## ✨ Steps
+
+1. Clone the repository: https://github.com/viktorijabrun/Sweetshop_test.git
+2. Install dependencies: `npm install`
+3. Run cypress: `npm run cypress-ui`
 
 ---
 
-## How to Use This Repository
-
-1. Clone the repository.
-2. Set up Cypress by following the [official documentation](https://docs.cypress.io/).
-3. Run the test cases using `npx cypress open` or `npx cypress run`.
-4. Verify test results and address any issues identified in the "Known Issues" section.
-
----
-
-## Known Issues
+## 📢 Known Issues
 
 ### Sweets Page:
 
@@ -35,12 +36,10 @@ This project is focused on testing the functionality of the **Sweet Shop** websi
 ### Login Page:
 
 - Social media icons are not linked to any functionality.
-- Users can log in with random credentials without registration.
+- Users can login with random credentials without registration.
 
 ### Basket Page:
 
 - Standard shipping returns incorrect price or `NaN`.
 - After clicking **"Continue to Checkout"**, the page resets without navigating.
 - The promo code does not provide any feedback message.
-
----
