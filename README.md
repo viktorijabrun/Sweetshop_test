@@ -48,7 +48,7 @@ Ensure you have the following installed on your system:
 - After clicking **"Continue to Checkout"**, the page resets without navigating.
 - The promo code does not provide any feedback message.
 
-# Test cases
+# 📄Test cases
 
 ## Test Case 1: Home Page
 
