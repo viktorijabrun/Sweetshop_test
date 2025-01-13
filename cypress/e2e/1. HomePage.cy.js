@@ -1,5 +1,5 @@
-describe("Home page test", () => {
-  it("Home page is visible", () => {
+describe("1. Home page test", () => {
+  it("1.1. Home page is visible", () => {
     // Navigate to shop
     cy.visit("https://sweetshop.netlify.app/");
 

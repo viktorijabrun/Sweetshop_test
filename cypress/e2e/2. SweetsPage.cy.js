@@ -1,5 +1,5 @@
-describe("Sweets page", () => {
-  it("passes", () => {
+describe("2. Sweets page", () => {
+  it("2.1. Verify that Sweets page is visible", () => {
     // Navigate to shop
     cy.visit("https://sweetshop.netlify.app/");
 

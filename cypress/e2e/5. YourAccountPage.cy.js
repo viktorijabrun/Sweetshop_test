@@ -1,8 +1,9 @@
-describe("Your Account page test", () => {
-  it("Your account page is visible", () => {
-    //Navigate to shop
+describe("5. Your Account page test", () => {
+  beforeEach(() => {
     cy.visit("https://sweetshop.netlify.app/");
+  });
 
+  it("5.1. Your account page is visible", () => {
     cy.contains(".nav-link", "Login").click();
 
     //Login with your account.
@@ -28,5 +29,30 @@ describe("Your Account page test", () => {
 
     //Check if footer "Sweet Shop Project 2018"is visible.
     cy.contains("p", "Sweet Shop Project 2018").should("be.visible");
+  });
+
+  it("5.2. Added item displayed at 'Your Basket'", () => {
+    //Navigate to Sweets page
+    cy.contains(".nav-link", "Sweets").click();
+
+    //Choose first product and add to basket.
+    const selectedItem = "Chocolate Cups";
+
+    cy.contains(".card-title", selectedItem)
+      .closest(".card")
+      .find(".addItem")
+      .click();
+
+    // Verify that the item is added to the cart and the cart icon is updated.
+    cy.contains(".badge", "1").should("be.visible");
+
+    //Click on "Login" button on navigation bar.
+    cy.contains(".nav-link", "Login").click();
+
+    //Login to your account
+    cy.login("test@gmail.com", "password1");
+
+    //Verify that the item is in the basket.
+    cy.get(".list-group-item").should("contain", selectedItem);
   });
 });

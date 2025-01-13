@@ -1,9 +1,9 @@
-describe("Login page test", () => {
+describe("4. Login page test", () => {
   beforeEach(() => {
     cy.visit("https://sweetshop.netlify.app/");
     cy.contains(".nav-link", "Login").click();
   });
-  it("Page content is visible", () => {
+  it("4.1. Page content is visible", () => {
     //Check page has 'Login' title, description.
     cy.contains("h1", "Login").should("be.visible");
     cy.get(".lead").should("be.visible");
@@ -24,7 +24,7 @@ describe("Login page test", () => {
     cy.contains("p", "Sweet Shop Project 2018").should("be.visible");
   });
 
-  it("Successful login Scenario", () => {
+  it("4.2. Successful login Scenario", () => {
     //Enter correct email address and password.
     cy.get("#exampleInputEmail").type("a@a.com");
     cy.get("#exampleInputPassword").type("pass");
@@ -35,7 +35,7 @@ describe("Login page test", () => {
     cy.contains("h1", "Your Account").should("be.visible");
   });
 
-  it("Unsuccessful login scenario", () => {
+  it("4.3. Unsuccessful login scenario", () => {
     ///Leave empty email address and password inputs and click login button.
     cy.contains("button", "Login").click();
 

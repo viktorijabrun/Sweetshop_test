@@ -1,9 +1,9 @@
-describe("Basket page test", () => {
+describe("6. Basket page test", () => {
   beforeEach(() => {
     cy.visit("https://sweetshop.netlify.app/");
   });
 
-  it("Verify that items count is correct", () => {
+  it("6.1. Verify that items count is correct", () => {
     // Choose first two product and click "Add to basket".
     cy.get(".addItem").eq(0).click();
     cy.get(".addItem").eq(1).click();
@@ -21,7 +21,7 @@ describe("Basket page test", () => {
     cy.contains("#basketCount", "2").should("be.visible");
   });
 
-  it("Total price is correct", () => {
+  it("6.2. Total price is correct", () => {
     //Add items to basket
     cy.addItemToBasket([0, 1]);
 
@@ -50,7 +50,42 @@ describe("Basket page test", () => {
       });
   });
 
-  it("Successful product delete from basket", () => {
+  it("6.3. Should retain items added to the basket while navigating the page.", () => {
+    //Add item to basket.
+    cy.addItemToBasket([0]);
+
+    //Navigate trough pages.
+    cy.visit("https://sweetshop.netlify.app/sweets");
+    cy.visit("https://sweetshop.netlify.app/login");
+    cy.visit("https://sweetshop.netlify.app/basket");
+
+    //Check if basket count matches expected.
+    cy.get("#basketCount").should("have.text", "1");
+  });
+
+  it("6.4. Should add the selected item to the basket with the correct name", () => {
+    //Navigate to Sweets page
+    cy.contains(".nav-link", "Sweets").click();
+
+    //Choose first product and add to basket.
+    const selectedItem = "Chocolate Cups";
+
+    cy.contains(".card-title", selectedItem)
+      .closest(".card")
+      .find(".addItem")
+      .click();
+
+    // Verify that the item is added to the cart and the cart icon is updated.
+    cy.contains(".badge", "1").should("be.visible");
+
+    //Click on "Basket" button on navigation bar.
+    cy.contains(".nav-link", "Basket").click();
+
+    //Verify that the item is in the basket.
+    cy.get(".list-group-item").should("contain", selectedItem);
+  });
+
+  it("6.5. Successful product delete from basket", () => {
     //Adds one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
@@ -61,7 +96,7 @@ describe("Basket page test", () => {
     cy.contains("#basketCount", "0").should("be.visible");
   });
 
-  it("Successfully remove all products", () => {
+  it("6.6. Successfully remove all products", () => {
     //Adds two products in basket and navigates to basket.
     cy.addItemToBasket([0, 1]);
 
@@ -72,7 +107,7 @@ describe("Basket page test", () => {
     cy.contains("#basketCount", "0").should("be.visible");
   });
 
-  it("Successful payment scenario", () => {
+  it("6.7. Successful payment scenario", () => {
     //Add one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
@@ -96,7 +131,7 @@ describe("Basket page test", () => {
     cy.contains(".btn", "Continue to checkout").click();
   });
 
-  it("Unsuccessful payment scenario", () => {
+  it("6.8. Unsuccessful payment scenario", () => {
     //Add one product in basket and navigates to basket.
     cy.addItemToBasket([0]);
 
@@ -105,18 +140,5 @@ describe("Basket page test", () => {
 
     //Verify that messages indicating invalid feedback are visible next to the required inputs.
     cy.get(".invalid-feedback").should("be.visible");
-  });
-
-  it("Should retain items added to the basket while navigating the page.", () => {
-    //Add item to basket.
-    cy.addItemToBasket([0]);
-
-    //Navigate trough pages.
-    cy.visit("https://sweetshop.netlify.app/sweets");
-    cy.visit("https://sweetshop.netlify.app/login");
-    cy.visit("https://sweetshop.netlify.app/basket");
-
-    //Check if basket count matches expected.
-    cy.get("#basketCount").should("have.text", "1");
   });
 });
