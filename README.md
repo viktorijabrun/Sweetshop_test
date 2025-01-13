@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is focused on testing the functionality of the **Sweet Shop** website using **Cypress**. Below is the detailed documentation of instructions how to use repository,known issues encountered during testing and test cases.
+This project is focused on testing the functionality of the **Sweet Shop** website using **Cypress**. Below is the detailed documentation of instructions how to use repository, known issues encountered during testing and test cases.
 
 ---
 
