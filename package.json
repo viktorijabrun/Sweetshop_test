@@ -7,7 +7,7 @@
     "cypress-cli": "npx cypress run"
   },
   "keywords": [],
-  "author": "",
+  "author": "Viktorija (https://github.com/viktorijabrun)",
   "license": "ISC",
   "description": "",
   "dependencies": {
